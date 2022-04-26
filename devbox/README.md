@@ -47,9 +47,9 @@
 | Mountpoint        | Type / Usable Space                                      | Drives                 |
 |-------------------|----------------------------------------------------------|------------------------|
 | /                 | RAID1 / 1TB                                              | 2x [970 Evo Plus](./MZ-V7S1T0B-AM.md) 
-| /var/cache        | 500GB                                                    | 1x [970 Evo](./MZ-V7E500BW.md)
 | /build            | RAMFS                                                    | N/A
-| /gob              | Stratis                                                  | 6x [WD Red 4TB](./WD40EFZX.md)
+| /data             | RAID5 / Thinpool / 1TB                                   | 6x [WD Red 4TB](./WD40EFZX.md)
+|                   | Thinpool Cache                                           | 1x [970 EVO](./MZ-V7E500BW.md)
 
 ## Software
 - See antennae/dotfiles repo
