@@ -1,0 +1,286 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}                             % Set encoding
+\usepackage[english]{babel}                             % Set language
+\usepackage{lastpage}                                   % Customize page numbering
+\usepackage{fancyhdr}                                   % Customize header and footer
+\usepackage{color}                                      % Customize colors
+\usepackage{sectsty}                                    % Customize section titles
+\usepackage{hyperref}                                   % Enable hyperlinks
+\usepackage[normalem]{ulem}
+\usepackage [autostyle, english = american]{csquotes}   % Don't require single-quotes
+
+\MakeOuterQuote{"}
+\definecolor{slateblue}{rgb}{0.17,0.22,0.34}            % Define slateblue color
+\setcounter{secnumdepth}{2}                             % Suppress section numbering
+
+\fancypagestyle{plain}{\fancyhf{}\cfoot{\thepage\ of \pageref{LastPage}}}
+\pagestyle{plain}                                       % Set default pagestyles
+
+\sectionfont{\color{slateblue}}                         % Color section titles
+\renewcommand{\headrulewidth}{0pt}                      % Disable the default header rule
+\renewcommand{\footrulewidth}{.5pt}                     % Add a default footer rule
+
+\setlength{\tabcolsep}{8pt}                            % Set padding for tables
+
+\begin{document}
+
+\title{Crafting Engineering Whitepapers}
+\author{Smith, S. \thanks{https://github.com/faangbait}}
+\date{Created: August 14, 2019 \\ Modified: \today}
+
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{empty}
+    \begin{abstract}
+        Publishing an engineering whitepaper is a partnership between subject matter experts, marketing teams, and authors, where all parties are acutely aware of the importance of collaborative creation. No single individual is a subject matter expert in every domain, so the process favors a team-based approach. This paper lays out one author's opinion on what works to consistently create whitepapers that reflect positively on the publisher by effectively communicating highly technical products or services with strategic input from sales, marketing, and business leaders.
+    \end{abstract}
+\end{titlepage}
+\cleardoublepage
+
+\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+\section{The Five Voices}\label{topic:voices}
+\paragraph{The Five Voices} pattern serves to frame the responsibilities of each party so that each team member has a holistic understanding of the whitepaper, can contribute meaningfully both within and outside of their role, and can contribute their unique perspective towards the shared goal. This pattern assumes that any engineering whitepaper project will be able to field core contributors from the following specialties:
+
+\begin{itemize}
+    \item Leadership, including architects, directors, and other organizational units that made the decision to write a whitepaper in the first place
+    \item Engineers, including subject matter experts with deep technical knowledge of the product or service
+    \item Sales and Marketing, including staff who can offer a nuanced understanding of the how the product compares to the competition
+    \item Writers capable of quickly synthesizing information, structuring the paper, and creating the final copy to be published
+\end{itemize}
+
+\subsection{Assigning the Voices}
+The first collaborative task is to identify the core contributors and assign each contributor a primary Voice. It's optimal to have five core contributors, with each owning a specific Voice, but this is flexible. 
+
+In the real world, contributors may need to own two Voices. In many cases, particularly with startups, founders are simultaneously the subject matter experts, and they'll wear both hats. Some Voices may have multiple contributors, such as a team of product developers sharing the Voice of the Product.
+
+When the whitepaper is developed in-house, it's almost a certainty that the author will be able to simultaneously contribute to a second Voice, depending on his or her role within the company. Just go with what feels right. As long as all Voices have their chance to speak, the resulting paper will be comprehensive.
+
+    \subsubsection{Voice of the Customer}
+    This Voice is responsible for speaking as the Customer. Their key role is to bring up questions, concerns, or attitudes they currently face in communicating with prospects, discover use cases for the product, and object to spurious claims made by the other voices.
+    \begin{description}
+        \item[A natural fit for:] Sales, quality assurance, and technical account managers
+    \end{description}
+
+    \subsubsection{Voice of the Product}
+    This Voice is responsible for speaking as the Product. Their key role is to answer questions about the product to an excruciatingly-complicated level of detail. The Voice of the Product gives hard and fast facts as they stand today, whether good or bad and, critically, has no concern for the light in which those facts paint the product.
+    \begin{description}
+        \item[A natural fit for:] Developers, engineers, and subject matter experts
+    \end{description}
+
+    \subsubsection{Voice of the Market}
+    This Voice is responsible for speaking as the Market. Their key role is to highlight similarities and differences between the product and other products in the competitive landscape across all categories: features, solution maturity, support, price, etc.
+    \begin{description}
+        \item[A natural fit for:] Marketing managers, MBAs, or Director of Sales
+    \end{description}
+
+    \subsubsection{Voice of the Company}
+    This Voice is responsible for speaking as the Company. Their key role is to explain how the product fits within the scope of the company's offerings, detail future plans for the product, and shape the presentation made by the other voices.
+    \begin{description}
+        \item[A natural fit for:] C-suite/VPs, founders, or department heads
+    \end{description}
+
+    \subsubsection{Voice of the Author}
+    This Voice is responsible for synthesizing the other voices into a cohesive statement that shows how the product addresses the customer's concern while accounting for how the company wishes to portray the product and the implications of the competitive landscape.
+    \begin{description}
+        \item[A natural fit for:] A technical writer or marketing copywriter
+    \end{description}
+
+
+\section{Identifying the Paper's Scope}\label{topic:scope}
+\paragraph{The first step for the Voices} is to define and shape the direction of the paper by specifying the concepts to be covered. 
+
+By this stage, the team has determined the owners of the Five Voices (see pg. \pageref{topic:voices}) and knows the overarching topic of the paper (see pg. \pageref{appendix:topic}), but has yet to define the bounds of the whitepaper or determine what content is necessary. 
+
+Whitepapers come in all shapes and sizes, and there's no correct answer for how long they should be. Consider that a paper expected to cover the topic of bubblegum could be as short as "flavored chewing rubber" or as long as a book detailing its origin and history, cultural significance, chemical composition, manufacturing, and so on. 
+
+This author does specifically caution readers against developing a whitepaper with a page target, as it will taint the process of exploration. Instead, define the depth and breadth of coverage with a skeleton. When more concepts are included in the skeleton, the resulting paper will be longer.
+
+\subsection{Concept Brainstorm}
+Begin scoping the paper by brainstorming the full list of concepts to be covered. Per the common rules of brainstorming, there are no wrong answers. Throw all the ideas in a hat and sort them later. Some good places to start discovering concepts include the scrum master's user stories, existing marketing materials, documentation, or the project's git repository. Once an exhaustive list of concepts within the scope of the whitepaper has been identified, it's time to start building the skeleton.
+
+\subsection{Developing the Skeleton}\label{topic:skeleton}
+Breaking down the full list of concepts to be covered can be a daunting task, but it's a critical step to ensuring that high-priority concepts receive the appropriate coverage. It's not always clear to an author which concepts should receive high-value real estate and which should be buried in a table on the third page.
+
+This author's preference is to rank concepts from 1 to 10 on two axes: priority and depth. The priority axis determines how much effort should be made to draw attention to the concept via placement and graphical elements. The depth axis determines how much detail the author should go into on the topic. For instance, a concept with a high priority but low depth score might receive coverage in the headline or subhead, while the inverse might be better suited to a table in the appendix.
+
+Determining how to generate these rankings is an exercise left for the reader. This author has always had success with discussion leading to consensus, but "scrum poker" would work just as well. Contributors can also "zero" brainstormed concepts if their coverage would be superfluous or out of scope.
+
+Critically, remind each participant that their Voice has an opinion that may not be their own. For instance, the Voice of the Market may not \textit{want} to detail how much better the competitors are, but it is their job nonetheless so that the author can manage expectations or craft feature lists in a way that highlights the competitive differences.
+
+\subsubsection{Example Skeleton for Identity Provider Whitepaper}
+
+\begin{center}
+    \begin{tabular}{ *{3}{|c}| } \hline
+        \textbf{Concept} & \textbf{Prio} & \textbf{Depth} \\ \hline
+        Multi-platform Password Manager & 10 & 5 \\ \hline
+        Cloud or On-Premise Deployment & 8 & 1 \\ \hline
+        Developers can Generate App Secrets & 6 & 8 \\ \hline
+        Secure API Endpoints / 100+ Integrations & 6 & 4 \\ \hline
+        Pay-as-you-Go Billing / No Minimums & 6 & 2 \\ \hline
+        RBAC for Users and Services & 4 & 2 \\ \hline
+        Multi-factor Authentication & 2 & 1 \\ \hline
+        Full X.500 Support & 2 & 1 \\ \hline
+        802.1X / RADIUS Support & 2 & 1 \\ \hline
+        \sout{Define Password Policy via Regex} & 0 & 0 \\ \hline
+                
+    \end{tabular}
+\end{center}
+
+\section{Defining the Target Audience}
+The crux of developing user-centered content is putting the target audience at the forefront of communication and writing specifically for them. In this section, we'll detail how to use a persona to quickly turn a nebulous idea of a target audience into a crystal-clear description the author can use to set the tone.
+
+\subsection{Gathering Data for a Persona}
+A persona is a fictional person that represents the whitepaper's target audience. If the paper's target audience is primarily executives at tech firms, then a persona might be Sandra, a 42-year-old mother of one, with an MBA from Emory University working as SVP of Sales at Acme Computers. It could just well be Timothy, 39 years old, a high-school dropout, and the CEO of Acme Computers.
+
+A persona is simply a character around which the author can construct a narrative. The examples described above are called "inclusive personas," as opposed to "average personas." When constructing an inclusive persona, the goal is to include unique details to create a more well-rounded character. 
+
+Instead of creating a persona that tries to find the "average" employee in the target audience, take some creative license here. By doing so, the tone will noticeably shift into one which is more engaging. Not everyone in the world has good grades, perfect teeth, exactly 2.5 children, and the median income for their level of experience, but if one tries to simply "picture the average employee," that's what they'll get every time: a middle-aged white man who may or may not own a boat. The tone of the finished product will be just as vanilla.
+
+There are three main options for gathering information about your target audience.
+
+    \subsubsection{Option A: Defining a Persona with Secondary Research}
+
+    Objectively, this represents the most accurate option for building personas. It's also the most expensive, requiring licenses to niche industry databases. Only the largest corporations will have the necessary funding to build a persona from secondary sources, but those corporations also have market research firms who can hand them a finished persona.
+
+    \subsubsection{Option B: Defining a Persona from Primary Research}
+    A much more accessible option for gathering data is primary research, for instance, surveys of your existing customers. 
+
+    \subsubsection{Option C: Defining a Persona by Fiat}
+    This no-work-required option is the most likely to err, which is particularly unfortunate, seeing as it's also the one that most people choose. A fiat persona is simply defined by the contributor with the highest level of seniority, typically from the sales and marketing department. This option easily falls victim to logical fallacies and human error, sometimes with disastrous consequences. 
+
+    That said, if an SVP hands the team a pre-defined target audience, they probably know what they're talking about. It's not the end of the world to work with a fiat persona, but stakeholders ought to at least survey the sales team. It's their job to know the customer, and their insights are invaluable.
+
+\subsection{Constructing a Persona}
+    At a minimum, defining the target audience requires answering the following questions. When answering the questions, write in "I, me, my" language, using the verbiage and tone the individual would use.
+
+    \begin{description}
+        \item [Biodata] The "demographics" portion. Give your persona a name, age, race, gender, level of education, job title, and perhaps a stock photograph.
+        \item [Pain Points] What annoys this person? It might be a pain point related to their personal life or their work life. These are ideally problems that the whitepaper can solve.
+        \item [Goals] What does this person want to accomplish? Stay roughly within the scope of goals directly related to the product covered in the whitepaper.
+        \item [Likes and Dislikes] Can we get a sense of the individual's personal preferences? For example, does this person like a lot of verifiable data, or would they skip right past charts and tables?
+        \item [Needs and Wants] Identify the individual's most pressing needs. Go one step further and identify what would represent the perfect option for them.
+    \end{description}
+
+    The Voice of the Customer and Voice of the Market are primarily responsible for defining the target audience. For instance, these Voices might collaborate to describe a specific existing customer that they think will benefit from the product and simply change the demographics to fictionalize them.
+
+\subsubsection{Example Persona for Identity Provider Whitepaper}
+    \begin{center}
+        \begin{tabular}{ *{2}{|l}| } \hline
+            \textbf{Bobby Lee}  & \textbf{"The Maven"} \\ \hline\hline
+            \multicolumn{2}{|c|}{\textbf{Biodata}} \\ \hline
+            Job Title & Engineer \\ \hline
+            Age & 28 \\ \hline
+            Resides & Dallas, TX \\ \hline
+            Marital Status & Married \\ \hline
+            He might say: & "@Isaac - this might help. http://bit.ly/L3huNhx" \\ \hline
+            \multicolumn{2}{|c|}{\textbf{Pain Points}} \\ \hline
+            \multicolumn{2}{|l|}{"I'm well versed in my field, but I know very little about Identity Providers."} \\ \hline
+            \multicolumn{2}{|c|}{\textbf{Goals}} \\ \hline
+            \multicolumn{2}{|l|}{"To ask for a promotion at the end of the year so I can afford a house."} \\ \hline
+            \multicolumn{2}{|c|}{\textbf{Likes and Dislikes}} \\ \hline
+            \multicolumn{2}{|l|}{"I like when features are explained very clearly. I don't like sales hype."} \\ \hline
+            \multicolumn{2}{|c|}{\textbf{Needs and Wants}} \\ \hline
+            \multicolumn{2}{|l|}{"I need to find an Identity Provider. I want it to be cheap, so I can push for a raise."} \\ \hline
+            
+        \end{tabular}
+    \end{center}
+\section{Writing a Creative Brief}
+The creative brief coalesces the discovery from the preceding stages into a shorter-is-better statement of the paper's scope and the target audience. Save the long-winded verbiage for the paper itself - if your brief exceeds a single page, it's probably too long. Half a page is more appropriate.
+
+The \textbf{Voice of the Author} is responsible for developing the creative brief, which should be reviewed by the other Voices before proceeding. This is his or her chance to show that they understand the scope of the paper and can write in the appropriate tone for the audience.
+
+\subsection{Metadata}
+At the top of the creative brief, place a metadata section to capture key project information. Use whatever makes sense to you, and capture as much or as little information here as you'd like. The template I prefer is as follows, listing contributors along with their assigned Voice.
+
+\subsubsection{Example Metadata}
+\begin{center}
+\begin{tabular}{ *{2}{|c}| } \hline
+    \today & \textbf{Topic: Identity Provider Whitepaper} \\ \hline\hline
+    \textbf{V.O. Customer} & Alice \\ \hline
+    \textbf{V.O. Product} & Bob, Carlos \\ \hline
+    \textbf{V.O. Market} & Destiny \\ \hline
+    \textbf{V.O. Company} & Eric \\ \hline
+    \textbf{V.O. Author} & Foo \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Brief}
+The meat and potatoes of the creative brief: five to eight sentences giving a short overview of what the paper hopes to accomplish. Think of this like the blog article that you'd post to let people know about the whitepaper - in fact, it may become that one day. 
+
+The most challenging and important part of writing the brief is using the same tone you'll use to write the whitepaper. This lets the team meet for real feedback early in the process. If the whitepaper is expected to sound academic, the description should look like an abstract. If it's a one-pager for the sales team to take to a trade show, use sales-oriented language. If contributors think the tone misses the mark, tweak and elaborate on the target audience or find a different author.
+
+\subsection{Attachments}
+Lastly, attach the skeleton and persona to the brief as separate pages. Congratulations! You've built a working document you can share internally for buy-in, send to freelance writers or graphic designers, or pass to your scrum master.
+
+\section{Conducting Collaborative Research}
+The last step before writing is thoroughly researching the concepts in the skeleton. This is where the exercise of assigning Voices (see pg. \pageref{topic:voices}) bears real fruit, as it narrows the focus of any individual contributor while still encouraging depth of coverage. Recording the audio of these sessions is critical: transcribing that audio and editing the actual words of the subject matter experts, rather than trying to learn everything and remember everything that was discussed, makes short work of drafting the paper.
+
+\subsection{Interviewing the Voices}
+
+Every concept that made it into the skeleton deserves to be discussed in the interviews. This author likes to use an egg timer to maintain focus and avoid getting into the weeds on a concept that doesn't need much depth. Set the egg timer at the depth metric for each concept, in minutes: a topic that was given a depth score of 8 should receive about eight minutes of discussion.
+
+\subsubsection{Example Interview}
+Let's explore how this works with a more concrete example: a whitepaper detailing a company's new Identity Provider solution. The scope (see pg. \pageref{topic:scope}) of the paper specifies that it should cover the solution's MFA feature.
+
+
+\begin{description}
+    \item[Customer] "\textit{My company is growing, and we need an Identity Provider that is ISO 27001 certified and supports multi-factor authentication for less than \$10 per user per month.}"
+    \item[Product] "\textit{The product supports MFA, but it is not ISO 27001 certified.}"
+    \item[Market] "\textit{There are countless IdP products on the market, and it's likely the customer is considering multiple competing options. Only one option at the customer's price point is ISO 27001 certified, but it requires a minimum of 500 seats.}"
+    \item[Company] "\textit{We have no plans to pursue ISO 27001 certification, but we think that we conform to its requirements. However, our cloud-based hosting service is ISO 27001 certified, so deploying our IdP product into our cloud likely meets the stated requirements.}"
+    \item[Author] Our Identity Provider Platform is a cost-effective multi-factor authentication solution. When paired with our cloud-based hosting service, our platform becomes the only ISO 27001-certified solution with no minimum seat requirements.
+\end{description}
+
+
+\section{Structuring the Paper}
+In the section on building a skeleton (see pg. \pageref{topic:skeleton}), the collaborators assigned each concept a priority. Use these priorities to organize the paper. The exact process is left as an exercise for the reader, as the tone and nature of the whitepaper will determine the most appropriate way to call attention to a concept, but in general, front-load the paper with high-priority topics. 
+
+If a certain concept is high-priority but feels too niche to put on the first page, then at the very least, make it a section headline or give it a graphical callout, like a sidebar.
+
+After transcribing the interviews and editing them for clarity, organizing the sections by priority, and using the depth as a guide to determine how many column inches the concept will get in the final paper, your draft is finished. That was quick, wasn't it? 
+
+\cleardoublepage
+\appendix{\section*{Appendices}}
+
+\section{List of Recommended Working Sessions}
+
+If your goal is to follow the process outlined above to the letter, the following summary of working sessions details the schedule and agenda.
+\begin{description}
+    \item [Scoping - 2x30 minutes] It's often best to break this into two thirty-minute sessions, as some contributors prefer to brainstorm alone. Use the first session to capture the obvious concepts and the second session to meet up, poll for any new ideas, and complete the priority/depth for the skeleton.
+    \item [Target Audience - ~15 minutes] Task the Voice of the Market and Voice of the Customer with completing this together, and use this time to review.
+    \item [Review Creative Brief: ~30 minutes] The Voice of the Author should prepare this ahead of time. The primary focus of this working session is discussing the tone of the brief and double-checking that no high-priority items were ignored.
+    \item [Interviews: ~Sum of the skeleton's depth, in minutes] Use an egg timer to limit discussion of each concept to its stated depth. Record this session and transcribe it later. My experience suggests that ten minutes of skeleton depth equals one page of final whitepaper. 
+    \item [Review Draft: ~60 minutes] Once the first draft is complete, everyone should read it in advance and use this time to discuss revisions. When the team agrees that revisions are complete, send the draft to a graphic designer.
+\end{description}
+
+\section{Topic Discovery for Sales and Marketing}\label{appendix:topic}
+Out of topic ideas or unsure whether a topic deserves a whitepaper or not? Allow me to share with you my strategy for using whitepapers as part of your sales and marketing efforts. 
+
+\subsection{Strategic Content Pillars}
+Every good budget has a strategic goal, and a sales and marketing budget is no different. Marketing professionals typically decide at the top of the year (sometimes, quarterly) what their upcoming communication goals are. 
+
+An exceedingly common way to progress towards these goals is to define content pillars (also known as tentpoles, cornerstone content, or campaigns).
+
+Whitepapers are a perfect fit to become a content pillar. Whitepapers are long, informative publications combining insights from multiple sources and covering everything that's important about a topic. 
+
+\subsection{Identifying Content Gaps}
+Once you've identified the communication goals of your campaign and selected a topic to become a strategic content pillar, the next step is to analyze your content gaps. Often, a topic recurs from quarter to quarter or year to year out of a strategic fit: companies typically want to communicate consistently about certain themes.
+
+Many such pillars can be created to communicate a recurring theme by simply expanding the breadth of topics covered. Consider writing companion whitepapers to your most critical content pillars. 
+
+The bottom line is that identifying content gaps is no more complicated than finding new ways to communicate about important topics. While there's more to a comprehensive content audit than just adding companion documents, like refreshing outdated content or rewriting a previous attempt that missed the mark, for the sake of brevity, I'll save those details for a different whitepaper.
+
+\subsection{Content as Customer Service}
+One critical gap that whitepapers can fulfill in your organization is customer service. We recommend all organizations strive toward generating a substantial public knowledge base, and whitepapers are a natural fit here, too.
+
+Dig through your FAQs and tickets and identify recurring questions customers have that are well-suited for coverage in a whitepaper. Remember, a whitepaper can be any length you like - even a single page!
+
+This will substantially contribute to search engine optimization - by far, the most common type of search query is "how do I solve this problem," - and reduce the burden on your sales or customer support teams by giving customers the tools they need to self-troubleshoot.
+
+\section{Hiring This Author}
+Is this too much for you to handle internally? Do you just want the results? I do this for a living. Send me a message through \href{https://github.com/faangbait}{\underline{GitHub}} \href{https://github.com/faangbait}{(\underline{github.com/faangbait})}.
+
+\end{document}
